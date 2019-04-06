@@ -1,7 +1,19 @@
+/* eslint no-console:0 */
 import Vue from 'vue'
-import App from './App.vue'
-import router from './router'
-import store from './store'
+
+// Components
+import './components'
+
+// Sync router with store
+import { sync } from 'vuex-router-sync'
+
+// Application imports
+import App from './App'
+import router from '@/router'
+import store from '@/store'
+
+// Sync store with router
+sync(store, router)
 
 Vue.config.productionTip = false
 
