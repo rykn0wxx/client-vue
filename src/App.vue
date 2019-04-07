@@ -1,10 +1,18 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
+  <div class="app layout-row">
+    <div class="sidenav">
+      <router-link to="/">Home</router-link>
+      <br />
       <router-link to="/about">About</router-link>
     </div>
-    <router-view/>
+    <div class="layout-column flex" tabindex="-1" role="main">
+      <div class="toolbar">
+        Toolbar goes here
+      </div>
+      <md-content content-class="md-scroll-y layout-column flex">
+        <md-view />
+      </md-content>
+    </div>
   </div>
 </template>
 
@@ -20,21 +28,9 @@ export default {
 </script>
 
 <style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+.app {
+  overflow: hidden;
+  max-width: 100%;
+  max-height: 100%;
 }
 </style>

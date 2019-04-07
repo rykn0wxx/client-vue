@@ -1,6 +1,11 @@
 <template>
-  <div>
+  <div class="about">
     vue component
+    <div>
+      <md-button class="md-primary">Primary</md-button>
+      <md-button class="md-raised md-primary">Primary</md-button>
+      <md-button class="md-raised md-accent">Accent</md-button>
+    </div>
   </div>
 </template>
 
