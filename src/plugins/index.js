@@ -1,3 +1,6 @@
 /* eslint no-console:0 */
+import Vue from 'vue'
+import VueRipple from './VueRipple'
+// import './VueMaterial'
 
-import './vue-ripple'
+Vue.use(VueRipple)

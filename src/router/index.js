@@ -39,7 +39,8 @@ const router = new Router({
       return { selector: to.hash }
     }
     return { x: 0, y: 0 }
-  }
+  },
+  linkActiveClass: 'active'
 })
 
 Vue.use(Meta)

@@ -8,7 +8,11 @@ import './components'
 import { sync } from 'vuex-router-sync'
 
 // Plugins
-import VueRipple from '@/plugins/VueRipple'
+// import VueRipple from '@/plugins/VueRipple'
+// import '@/plugins'
+import VueMaterial from 'vue-material'
+import 'vue-material/dist/vue-material.min.css'
+import './plugins/VueMaterial/custom-vue-material.scss'
 
 import '@/sass/styles.scss'
 
@@ -20,7 +24,8 @@ import store from '@/store'
 // Sync store with router
 sync(store, router)
 
-Vue.use(VueRipple)
+Vue.use(VueMaterial)
+// Vue.use(VueRipple)
 
 Vue.config.productionTip = false
 

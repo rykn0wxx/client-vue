@@ -1,8 +1,8 @@
 html, body {
   height: 100%;
   position: relative;
-  color: rgba(0,0,0,0.87);
-  background-color: rgb(250,250,250);
+  // color: rgba(0,0,0,0.87);
+  // background-color: rgb(250,250,250);
 }
 
 body {
@@ -110,35 +110,35 @@ input {
   transition: all 0.55s $swift-ease-out-timing-function;
 }
 
-.md-ripple {
-  $sizeDuration: 0.45s * 2;
-  position: absolute;
-  transform: translate(-50%, -50%) scale(0);
-  transform-origin: 50% 50%;
-  opacity: 0;
-  border-radius: 50%;
-  &.md-ripple-placed {
-    transition: margin $sizeDuration $swift-ease-out-timing-function,
-                border $sizeDuration $swift-ease-out-timing-function,
-                width $sizeDuration $swift-ease-out-timing-function,
-                height $sizeDuration $swift-ease-out-timing-function,
-                opacity $sizeDuration $swift-ease-out-timing-function,
-                transform $sizeDuration $swift-ease-out-timing-function;
-  }
-  &.md-ripple-scaled {
-    transform: translate(-50%, -50%) scale(1);
-  }
-  &.md-ripple-active, &.md-ripple-full, &.md-ripple-visible {
-    opacity: 0.20;
-  }
-  &.md-ripple-remove {
-    animation: md-remove-ripple $sizeDuration $swift-ease-out-timing-function;
-  }
-}
-@keyframes md-remove-ripple {
-  0% { opacity: .15; }
-  100% { opacity: 0; }
-}
+// .md-ripple {
+//   $sizeDuration: 0.45s * 2;
+//   position: absolute;
+//   transform: translate(-50%, -50%) scale(0);
+//   transform-origin: 50% 50%;
+//   opacity: 0;
+//   border-radius: 50%;
+//   &.md-ripple-placed {
+//     transition: margin $sizeDuration $swift-ease-out-timing-function,
+//                 border $sizeDuration $swift-ease-out-timing-function,
+//                 width $sizeDuration $swift-ease-out-timing-function,
+//                 height $sizeDuration $swift-ease-out-timing-function,
+//                 opacity $sizeDuration $swift-ease-out-timing-function,
+//                 transform $sizeDuration $swift-ease-out-timing-function;
+//   }
+//   &.md-ripple-scaled {
+//     transform: translate(-50%, -50%) scale(1);
+//   }
+//   &.md-ripple-active, &.md-ripple-full, &.md-ripple-visible {
+//     opacity: 0.20;
+//   }
+//   &.md-ripple-remove {
+//     animation: md-remove-ripple $sizeDuration $swift-ease-out-timing-function;
+//   }
+// }
+// @keyframes md-remove-ripple {
+//   0% { opacity: .15; }
+//   100% { opacity: 0; }
+// }
 
 .md-padding {
   padding: 8px;
