@@ -1,6 +1,8 @@
 <template>
   <div class="about">
-    vue component
+    <div>
+      <md-input type="email"></md-input>
+    </div>
     <div>
       <md-button class="md-primary">Primary</md-button>
       <md-button class="md-raised md-primary">Primary</md-button>
@@ -16,5 +18,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.myinput {
+  &::-webkit-input-placeholder {
+    color: red;
+  }
+}
 </style>

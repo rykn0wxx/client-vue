@@ -20,7 +20,7 @@
 
   @each $pseudo in $pseudos {
     &#{$pseudo} {
-      color: unquote($color);
+      color: $color;
     }
   }
 }
