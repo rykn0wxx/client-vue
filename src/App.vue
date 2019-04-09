@@ -2,9 +2,12 @@
   <div class="app layout-row">
     <md-app md-waterfall md-mode="fixed" class="app-md">
       <md-app-toolbar class="md-primary app-toolbar md-whiteframe-glow-z1">
+        <md-button class="md-icon-button" @click="showSidebar = !showSidebar">
+          <md-icon>menu</md-icon>
+        </md-button>
         <span class="md-title">My Title</span>
       </md-app-toolbar>
-      <md-app-drawer md-permanent="full" class="app-drawer">
+      <md-app-drawer md-permanent="full" class="app-drawer" v-if="showSidebar">
         <md-toolbar class="md-transparent" md-elevation="0">
           Navigation
         </md-toolbar>
@@ -24,7 +27,7 @@
           <div class="item-divider"></div>
         </md-list>
       </md-app-drawer>
-      <md-app-content class="app-content">
+      <md-app-content class="app-content layout-column flex">
         <md-views />
       </md-app-content>
     </md-app>
@@ -36,7 +39,8 @@ export default {
   name: 'App',
   data () {
     return {
-      activeRoute: ''
+      activeRoute: '',
+      showSidebar: true
     }
   },
   metaInfo () {

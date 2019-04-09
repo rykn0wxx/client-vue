@@ -1,5 +1,8 @@
 <template>
   <div>
+    <md-whiteframes :depth="8">
+      <span>i am whiteframes</span>
+    </md-whiteframes>
     <form novalidate class="md-layout">
       <md-card class="md-layout-item md-size-50 md-small-size-100">
         <md-card-header>

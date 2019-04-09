@@ -199,3 +199,20 @@ bdo[dir=ltr] {
   unicode-bidi: bidi-override;
 }
 
+// .md-content {
+//   display: block;
+//   position: relative;
+//   overflow: auto;
+//   -webkit-overflow-scrolling: touch;
+//   &.md-scroll-y {
+//     overflow-y: auto;
+//     overflow-x: hidden;
+//   }
+//   &.md-scroll-x {
+//     overflow-x: auto;
+//     overflow-y: hidden;
+//   }
+//   @media print {
+//     overflow: visible !important;
+//   }
+// }
