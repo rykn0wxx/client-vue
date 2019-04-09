@@ -35,6 +35,7 @@
       </md-app-drawer>
       <md-app-content class="app-content layout-column flex">
         <md-views />
+        <core-scroll-fab scroll-elem-selector=".md-app-scroller" />
       </md-app-content>
     </md-app>
   </div>
