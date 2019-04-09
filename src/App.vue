@@ -24,6 +24,12 @@
               <span class="md-list-item-text">About</span>
             </router-link>
           </md-list-item>
+          <md-list-item class="app-drawer__item components" :class="activeRoute">
+            <router-link to="/components" class="app-drawer__link">
+              <md-icon>person</md-icon>
+              <span class="md-list-item-text">Components</span>
+            </router-link>
+          </md-list-item>
           <div class="item-divider"></div>
         </md-list>
       </md-app-drawer>
@@ -125,7 +131,7 @@ export default {
     }
   }
 }
-.home.home-active, .about.about-active {
+.home.home-active, .about.about-active, .components.components-active {
   background-color: rgba(0,0,0,0.1);
   box-shadow: 0 1px 3px rgba(0,0,0,0.1) inset;
 }

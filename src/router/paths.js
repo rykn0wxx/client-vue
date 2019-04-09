@@ -11,5 +11,9 @@ export default [
     path: '/about',
     name: 'about',
     view: 'About'
+  }, {
+    path: '/components',
+    name: 'components',
+    view: 'Components'
   }
 ]

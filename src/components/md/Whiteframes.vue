@@ -19,7 +19,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import '../../sass/colors';
 @import '../../sass/variables';
 @import '../../sass/mixins';
