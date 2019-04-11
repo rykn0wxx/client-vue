@@ -1,15 +1,12 @@
 <template>
-  <div :class="`md-content ${contentClass}`">
+  <div class="md-content">
     <slot />
   </div>
 </template>
 
 <script>
 export default {
-  name: 'MdContent',
-  props: [
-    'contentClass'
-  ]
+  name: 'MdContents'
 }
 </script>
 

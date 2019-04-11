@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="home">
     <md-whiteframes :depth="8">
       <span>i am whiteframes</span>
     </md-whiteframes>
