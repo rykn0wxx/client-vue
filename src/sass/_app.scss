@@ -4,7 +4,7 @@
 }
 .mudhead {
   font-size: 1.6rem;
-  overflow: hidden;
+  overflow: hidden auto;
   max-width: 100%;
   max-height: 100%;
 }
@@ -16,17 +16,19 @@
   }
 }
 
-.rykn0wxx .mudhead {
-  ::-webkit-scrollbar {
-    width: 8px !important;
-    height: 8px !important;
-    border-radius: 8px !important;
-    &-corner, &-track {
-      background: #23252e !important;
-    }
-    &-thumb {
-      background: #b2b9bf !important;
+.rykn0wxx {
+  &, .mudhead {
+    ::-webkit-scrollbar {
+      width: 8px !important;
+      height: 8px !important;
       border-radius: 8px !important;
+      &-corner, &-track {
+        background: #23252e !important;
+      }
+      &-thumb {
+        background: #b2b9bf !important;
+        border-radius: 8px !important;
+      }
     }
   }
 }

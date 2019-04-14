@@ -199,20 +199,26 @@ bdo[dir=ltr] {
   unicode-bidi: bidi-override;
 }
 
-// .md-content {
-//   display: block;
-//   position: relative;
-//   overflow: auto;
-//   -webkit-overflow-scrolling: touch;
-//   &.md-scroll-y {
-//     overflow-y: auto;
-//     overflow-x: hidden;
+// .mudhead {
+//   &::-webkit-scrollbar {
+//     width: 1em;
+//     &-track {
+//       box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+//     }
+//     &-thumb {
+//       background-color: darkgrey;
+//       outline: 1px solid slategrey;
+//     }
 //   }
-//   &.md-scroll-x {
-//     overflow-x: auto;
-//     overflow-y: hidden;
-//   }
-//   @media print {
-//     overflow: visible !important;
+//   ::-webkit-scrollbar {
+//     width: 0.5em;
+//     height: 0.5em;
+//     &-thumb {
+//       background: $secondary;
+//       cursor: pointer;
+//     }
+//     &-track {
+//       background: 0 0;
+//     }
 //   }
 // }

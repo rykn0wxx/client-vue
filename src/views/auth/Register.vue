@@ -1,87 +1,85 @@
 <template>
-  <div class="flex-40">
-    <form novalidate class="md-layout">
-      <md-card class="md-card-plain">
-        <md-card-header>
-          <router-link to="/" class="md-title">Register</router-link>
-        </md-card-header>
-        <md-card-content>
-          <div class="md-layout">
-            <div class="md-layout-item">
-              <md-field>
-                <md-icon class="md-accent">email</md-icon>
-                <label for="email">Email</label>
-                <md-input name="email" id="email" autocomplete="off" v-model="user.email" />
-              </md-field>
-            </div>
-          </div>
-          <div class="md-layout">
-            <div class="md-layout-item">
-              <md-field>
-                <md-icon class="md-accent">person</md-icon>
-                <label for="username">Username</label>
-                <md-input name="username" id="username" autocomplete="off" v-model="user.username" />
-              </md-field>
-            </div>
-          </div>
-          <div class="md-layout">
-            <div class="md-layout-item">
-              <md-field>
-                <md-icon class="md-accent">lock</md-icon>
-                <label for="password">Password</label>
-                <md-input name="password" id="password" autocomplete="off" v-model="user.password" />
-              </md-field>
-            </div>
-          </div>
-          <div class="md-layout">
-            <div class="md-layout-item">
-              <md-field>
-                <md-icon class="md-accent">lock</md-icon>
-                <label for="password_confirmation">Password Confirmation</label>
-                <md-input name="password_confirmation" id="password_confirmation" autocomplete="off" v-model="user.password_confirmation" />
-              </md-field>
-            </div>
-          </div>
-        </md-card-content>
-        <md-card-actions>
-          <md-button>Action</md-button>
-        </md-card-actions>
-      </md-card>
-    </form>
-    <div class="page-foooter layout-row layout-align-start-none">
-      <router-link to="/login" class="auth-link md-body-1">Sign in</router-link>
+  <div class="register base-container container">
+    <div class="layout-column layout-align-center-center">
+      <form class="login-form" novalidate>
+        <core-card class="login-form__card" headerStyle="rgba(#4c5667, 0.5)">
+          <template v-slot:cardHeader>
+            <router-link class="login-form__logo" to="/">
+              <core-anon-logo />
+            </router-link>
+          </template>
+          <template v-slot:cardSubhead>
+            <small class="text-white">Create your account and enjoy</small>
+          </template>
+          <template v-slot:cardContent>
+            <md-field>
+              <md-icon>email</md-icon>
+              <label for="login">Login</label>
+              <md-input id="login" name="login" type="text" autocomplete="off" autofocus="true" required />
+            </md-field>
+            <md-field>
+              <md-icon>lock</md-icon>
+              <label for="password">Password</label>
+              <md-input id="password" name="password" type="password" autocomplete="off" autofocus="false" required />
+            </md-field>
+          </template>
+          <template v-slot:cardAction>
+            <md-button class="md-primary">Register</md-button>
+          </template>
+        </core-card>
+      </form>
+      <div class="base-footer">
+        <h6 class="md-caption">
+          Already have an account? <router-link to="/login" class="auth-link">Sign in</router-link>
+        </h6>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Register',
-  data () {
-    return {
-      user: {
-        email: '',
-        username: '',
-        password: '',
-        password_confirmation: ''
-      }
-    }
-  }
+  name: 'Register'
 }
 </script>
 
 <style lang="scss" scoped>
-.authentication .md-card-plain {
-  background-color: transparent;
-  box-shadow: none;
-  border: 0;
-  width: 100%;
-  .md-card-header, .md-card-content {
-    padding-left: 5px;
-    padding-right: 5px;
+.base {
+  &-container {
+    padding-top: 10vh;
+    z-index: 2;
+    position: relative;
+    .md-caption {
+      margin-top: 0;
+    }
   }
-  .md-field > .md-icon::after {
-    background-color: transparent;
+}
+.register {
+  .base-footer, .login-form {
+    width: 400px;
+  }
+  .login-form {
+    &__logo {
+      display: block;
+      text-align: center;
+      > svg {
+        height: 48px;
+        width: auto;
+        fill: rgba(0, 0, 0, 0.7);
+      }
+    }
+    &__card {
+      background-color: rgba(#2f323e, 0.5);
+      color: #b2b9bf;
+      width: 100%;
+      margin-bottom: 0;
+      &-header {
+        background-color: rgba(#4c5667, 0.5);
+      }
+    }
+  }
+  .auth-link {
+    text-decoration: none;
   }
 }
 </style>

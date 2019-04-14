@@ -55,7 +55,7 @@ $card-border-radius: 2px;
     flex-direction: row;
     &:first-child {
       .md-card-avatar {
-       @include rtl-prop(margin-right, margin-left, 12px, auto);
+        @include rtl-prop(margin-right, margin-left, 12px, auto);
       }
     }
     &:last-child {

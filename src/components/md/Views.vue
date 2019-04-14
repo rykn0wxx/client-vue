@@ -1,5 +1,5 @@
 <template>
-  <div class="md-view layout-padding flex-noshrink">
+  <div class="md-views layout-padding flex-noshrink">
     <transition name="fade-right">
       <router-view />
     </transition>
@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  name: 'MdView'
+  name: 'MdViews'
 }
 </script>
 
