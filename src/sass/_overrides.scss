@@ -12,6 +12,9 @@
       margin-top: 8px;
       margin-bottom: 8px;
     }
+    .md-field > .md-icon::after {
+      background-color: rgba(0,0,0,0);
+    }
   }
 }
 

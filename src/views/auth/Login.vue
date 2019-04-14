@@ -1,7 +1,7 @@
 <template>
   <div class="login base-container container">
     <div class="layout-column layout-align-center-center">
-      <form class="login-form" novalidate>
+      <form class="login-form" novalidate ref="form" @submit.prevent="validateUser">
         <core-card class="login-form__card" headerStyle="rgba(#4c5667, 0.5)">
           <template v-slot:cardHeader>
             <router-link class="login-form__logo" to="/">
@@ -12,19 +12,19 @@
             <small class="text-white">Sign in to start your session</small>
           </template>
           <template v-slot:cardContent>
-            <md-field>
+            <md-field :class="getValidationClass('login')">
               <md-icon>email</md-icon>
               <label for="login">Login</label>
-              <md-input id="login" name="login" type="text" autocomplete="off" autofocus="true" required />
+              <md-input v-model="user.login" id="login" name="login" type="text" autocomplete="off" autofocus="true" required />
             </md-field>
-            <md-field>
+            <md-field :class="getValidationClass('password')">
               <md-icon>lock</md-icon>
               <label for="password">Password</label>
-              <md-input id="password" name="password" type="password" autocomplete="off" autofocus="false" required />
+              <md-input v-model="user.password" id="password" name="password" type="password" autocomplete="off" autofocus="false" required />
             </md-field>
           </template>
           <template v-slot:cardAction>
-            <md-button class="md-primary">Login</md-button>
+            <md-button class="md-primary" type="submit" :disabled="sending">Login</md-button>
           </template>
         </core-card>
       </form>
@@ -38,8 +38,50 @@
 </template>
 
 <script>
+import { validationMixin } from 'vuelidate'
+import { required, minLength } from 'vuelidate/lib/validators'
+
 export default {
-  name: 'Login'
+  name: 'Login',
+  mixins: [ validationMixin ],
+  data () {
+    return {
+      user: {
+        login: null,
+        password: null
+      },
+      sending: false
+    }
+  },
+  validations: {
+    user: {
+      login: {
+        required,
+        minLength: minLength(1)
+      },
+      password: {
+        required,
+        minLength: minLength(2)
+      }
+    }
+  },
+  methods: {
+    getValidationClass (fldName) {
+      const field = this.$v.user[fldName]
+      if (field) {
+        return {
+          'md-invalid': field.$invalid && field.$dirty
+        }
+      }
+    },
+    validateUser () {
+      this.$v.$touch()
+      if (!this.$v.$invalid) {
+        console.log(this.$v)
+      }
+      console.log(this.$v)
+    }
+  }
 }
 </script>
 
