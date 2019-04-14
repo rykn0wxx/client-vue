@@ -1,12 +1,19 @@
 <template>
   <md-card class="core-card">
-    <md-card-header class="core-card__header md-whiteframe-5dp">
-      <h4 class="core-card__header--title">{{ headerTitle || 'Default Title' }}</h4>
-      <p class="core-card__header--subhead">{{ headerSubhead || 'Default Subhead' }}</p>
+    <md-card-header class="core-card__header md-whiteframe-5dp" v-bind:style="{backgroundColor: headerStyle}">
+      <slot name="cardHeader">
+        <h4 class="core-card__header--title">Default Title</h4>
+      </slot>
+      <slot name="cardSubhead">
+        <p class="core-card__header--subhead">Default Subhead</p>
+      </slot>
     </md-card-header>
     <md-card-content class="core-card__content">
-      <slot />
+      <slot name="cardContent" />
     </md-card-content>
+    <md-card-actions>
+      <slot name="cardAction" />
+    </md-card-actions>
   </md-card>
 </template>
 
@@ -15,7 +22,8 @@ export default {
   name: 'CoreCard',
   props: [
     'headerTitle',
-    'headerSubhead'
+    'headerSubhead',
+    'headerStyle'
   ]
 }
 </script>

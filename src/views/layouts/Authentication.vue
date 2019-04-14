@@ -47,7 +47,7 @@ export default {
   &-content {
     padding-top: 5%;
   }
-  &-container { 
+  &-container {
     position: relative;
     height: 100%;
     text-align: center;

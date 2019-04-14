@@ -1,5 +1,5 @@
 <template>
-  <div class="md-content">
+  <div class="md-contents">
     <slot />
   </div>
 </template>
@@ -11,7 +11,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.md-content {
+.md-contents {
   display: block;
   position: relative;
   overflow: auto;

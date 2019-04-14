@@ -36,6 +36,12 @@
               <span class="md-list-item-text">Authentication</span>
             </router-link>
           </md-list-item>
+          <md-list-item class="app-drawer__item base" :class="activeRoute">
+            <router-link to="/base" class="app-drawer__link">
+              <md-icon>menu</md-icon>
+              <span class="md-list-item-text">Base</span>
+            </router-link>
+          </md-list-item>
           <div class="item-divider"></div>
         </md-list>
       </md-app-drawer>

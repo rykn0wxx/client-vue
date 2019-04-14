@@ -50,7 +50,25 @@ const customRoutes = [
   {
     path: '/authentication',
     component: (resolve) => import('@/views/layouts/Authentication.vue').then(resolve),
-    name: 'LayoutsAuthentication',
+    name: 'LayoutsAuthentication'
+    // redirect: '/login',
+    // children: [
+    //   {
+    //     path: '/login',
+    //     name: 'Login',
+    //     component: (resolve) => import('@/views/auth/Login.vue').then(resolve)
+    //   },
+    //   {
+    //     path: '/register',
+    //     name: 'Register',
+    //     component: (resolve) => import('@/views/auth/Register.vue').then(resolve)
+    //   }
+    // ]
+  },
+  {
+    path: '/base',
+    component: (resolve) => import('@/views/layouts/Base.vue').then(resolve),
+    name: 'LayoutsBase',
     redirect: '/login',
     children: [
       {
